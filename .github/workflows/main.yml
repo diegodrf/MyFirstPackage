@@ -24,14 +24,8 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --verbosity normal
-    # Publish
-    - name: publish on version change
-      id: publish_nuget
-      uses: brandedoutcast/publish-nuget@v2
-      with:
-        # Filepath of the project to be packaged, relative to root of repository
-        PROJECT_FILE_PATH: MyFirstPackage/MyFirstPackage.csproj
-        # API key to authenticate with NuGet server
-        NUGET_KEY: ${{secrets.NUGET_SECRET}}
-        # NuGet server uri hosting the packages, defaults to https://api.nuget.org
-        NUGET_SOURCE: https://api.nuget.org
+
+    - name: Package
+      run: dotnet pack -c Release -o . MyFirstPackage/MyFirstPackage.csproj
+    - name: Publish
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_SECRET }} -s https://api.nuget.org/v3/index.json
