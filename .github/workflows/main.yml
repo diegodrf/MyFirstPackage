@@ -24,7 +24,7 @@ jobs:
       run: dotnet build --configuration release
     - name: Test
       run: dotnet test --verbosity normal
-    #- name: Generate Package
-    #  run: dotnet pack --configuration release "MyFirstPackage\MyFirstPackage.csproj"
+    - name: Generate Package
+      run: dotnet pack --configuration release "MyFirstPackage\MyFirstPackage.csproj"
     - name: Publish on NuGet
       run: dotnet nuget push "MyFirstPackage/bin/Release/*.nupkg" -k ${{ secrets.NUGET_SECRET }} -s https://api.nuget.org/v3/index.json
