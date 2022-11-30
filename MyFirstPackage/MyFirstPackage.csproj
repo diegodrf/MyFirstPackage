@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <PackageId>MyFirstPackage</PackageId>
+    <PackageId>diegodrf.MyFirstPackage</PackageId>
     <Version>0.0.2</Version>
     <Authors>Diego Faria</Authors>
     <Company>diegodrf</Company>
