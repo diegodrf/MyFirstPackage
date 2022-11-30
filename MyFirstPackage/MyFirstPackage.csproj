@@ -10,6 +10,10 @@
     <Authors>Diego Faria</Authors>
     <Company>diegodrf</Company>
     <PackageTags>FirstPackage;Test</PackageTags>
+    <Title>My First Package</Title>
+    <Description>My first package to learn nuget.</Description>
+    <PackageProjectUrl>https://github.com/diegodrf/MyFirstPackage</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/diegodrf/MyFirstPackage</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
